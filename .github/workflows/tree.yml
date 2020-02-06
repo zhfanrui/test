@@ -10,3 +10,5 @@ jobs:
     steps:
       - name: get
         uses: zhfanrui/get-files-action@master
+        with:
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
