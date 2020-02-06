@@ -11,11 +11,11 @@ jobs:
       - name: pwd
         run: pwd
       - name: touch
-        run: touch 1
+        run: touch 2
       - name: ls
         run: ls
-      - name: git
-        run: git
+#       - name: git
+#         run: git
       - name: echo
         run: echo $GITHUB_REPOSITORY $HOME
 #       - name: Get dir tree
