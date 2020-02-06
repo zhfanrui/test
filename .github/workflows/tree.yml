@@ -19,14 +19,14 @@ jobs:
 #       - name: Checkout
 #         uses: actions/checkout@v2.0.0
       - name: echo
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: echo ${{ secrets.GITHUB_TOKEN }} ${{ GITHUB_REPOSITORY }}
 #       - name: Get dir tree
 #         run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
 #       - name: show
 #         run: ls && cat contents
 #       - name: git clone
 #         run: |
-#           remote_repo="https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && \
+#           remote_repo="https://${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" && \
 #           echo $remote_repo && \
 #           git init && \
 #           git config user.name "$GITHUB_ACTOR" && \
