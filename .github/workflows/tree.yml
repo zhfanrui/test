@@ -8,15 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: pwd
-        run: pwd
-      - name: touch
-        run: touch 2
+#       - name: pwd
+#         run: pwd
+#       - name: touch
+#         run: touch 2
       - name: ls
-        run: ls
+        run: ls $HOME
 #       - name: git
 #         run: git
       - name: echo
         run: echo $GITHUB_REPOSITORY $HOME
-#       - name: Get dir tree
-#         run: curl -i https://api.github.com/repos/zhfanrui/test/contents
+      - name: Get dir tree
+        run: curl -i https://api.github.com/repos/$GITHUB_REPOSITORY/contents
+      - name: Get dir tree
+        run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
+      - name: show
+        run: ls && cat contents
