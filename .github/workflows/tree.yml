@@ -19,7 +19,7 @@ jobs:
 #       - name: Checkout
 #         uses: actions/checkout@v2.0.0
       - name: echo
-        run: echo $GITHUB_TOKEN
+        run: echo ${{ secrets.GITHUB_TOKEN }}
 #       - name: Get dir tree
 #         run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
 #       - name: show
