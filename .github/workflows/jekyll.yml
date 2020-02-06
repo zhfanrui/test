@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Jekyll Action
+      uses: helaili/jekyll-action@1.0
+
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
