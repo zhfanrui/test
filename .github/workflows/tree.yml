@@ -18,23 +18,21 @@ jobs:
 #         run: git
 #       - name: Checkout
 #         uses: actions/checkout@v2.0.0
-#       - name: echo
-#         run: echo $GITHUB_REPOSITORY $HOME
+      - name: echo
+        run: echo $GITHUB_TOKEN
 #       - name: Get dir tree
-#         run: curl -i https://api.github.com/repos/$GITHUB_REPOSITORY/contents
-      - name: Get dir tree
-        run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
-      - name: show
-        run: ls && cat contents
-      - name: git clone
-        run: |
-          remote_repo="https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && \
-          echo $remote_repo && \
-          git init && \
-          git config user.name "$GITHUB_ACTOR" && \
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
-          git add . && \
-          git commit -m 'jekyll build from Action' && \
-          git push --force $remote_repo master:tree && \
-          rm -fr .git && \
-          cd ..
+#         run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
+#       - name: show
+#         run: ls && cat contents
+#       - name: git clone
+#         run: |
+#           remote_repo="https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && \
+#           echo $remote_repo && \
+#           git init && \
+#           git config user.name "$GITHUB_ACTOR" && \
+#           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
+#           git add . && \
+#           git commit -m 'jekyll build from Action' && \
+#           git push --force $remote_repo master:tree && \
+#           rm -fr .git && \
+#           cd ..
