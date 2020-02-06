@@ -12,7 +12,7 @@ jobs:
 #         run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
       - name: git
         run: |
-          remote_repo="https://${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" && \
+          remote_repo="https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" && \
           echo $remote_repo && \
           git init && \
           git config user.name "$GITHUB_ACTOR" && \
