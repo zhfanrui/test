@@ -28,7 +28,7 @@ jobs:
         run: ls && cat contents
       - name: git clone
         run: |
-          remote_repo="https://github.com/$GITHUB_REPOSITORY.git" && \
+          remote_repo="https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" && \
           echo $remote_repo && \
           git init && \
           git config user.name "$GITHUB_ACTOR" && \
