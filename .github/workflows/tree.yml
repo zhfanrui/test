@@ -8,22 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#       - name: pwd
-#         run: pwd
-#       - name: touch
-#         run: touch 2
-#       - name: ls
-#         run: ls $HOME
-#       - name: git
-#         run: git
-#       - name: Checkout
-#         uses: actions/checkout@v2.0.0
-      - name: echo
-        run: echo ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
-#       - name: Get dir tree
-#         run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
-#       - name: show
-#         run: ls && cat contents
+      - name: Get dir tree
+        run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
       - name: git
         run: |
           remote_repo="https://${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" && \
@@ -32,6 +18,6 @@ jobs:
           git config user.name "$GITHUB_ACTOR" && \
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
           git add . && \
-          git commit -m 'jekyll build from Action' && \
+          git commit -m 'get articles' && \
           git push --force $remote_repo master:tree && \
           rm -fr .git
