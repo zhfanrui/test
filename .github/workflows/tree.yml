@@ -17,6 +17,7 @@ jobs:
           git init && \
           git config user.name "$GITHUB_ACTOR" && \
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents && \
           git add . && \
           git commit -m 'get articles' && \
           git push --force $remote_repo master:tree && \
