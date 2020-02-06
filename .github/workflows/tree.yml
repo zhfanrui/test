@@ -24,15 +24,14 @@ jobs:
 #         run: wget https://api.github.com/repos/$GITHUB_REPOSITORY/contents
 #       - name: show
 #         run: ls && cat contents
-#       - name: git clone
-#         run: |
-#           remote_repo="https://${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" && \
-#           echo $remote_repo && \
-#           git init && \
-#           git config user.name "$GITHUB_ACTOR" && \
-#           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
-#           git add . && \
-#           git commit -m 'jekyll build from Action' && \
-#           git push --force $remote_repo master:tree && \
-#           rm -fr .git && \
-#           cd ..
+      - name: git
+        run: |
+          remote_repo="https://${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" && \
+          echo $remote_repo && \
+          git init && \
+          git config user.name "$GITHUB_ACTOR" && \
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
+          git add . && \
+          git commit -m 'jekyll build from Action' && \
+          git push --force $remote_repo master:tree && \
+          rm -fr .git
