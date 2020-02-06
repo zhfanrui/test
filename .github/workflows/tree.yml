@@ -29,6 +29,7 @@ jobs:
       - name: git clone
         run: |
           remote_repo="https://github.com/$GITHUB_REPOSITORY.git" && \
+          echo $remote_repo && \
           git init && \
           git config user.name "$GITHUB_ACTOR" && \
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
